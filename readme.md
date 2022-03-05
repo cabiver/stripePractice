@@ -1,1 +1,0 @@
-if you wanna run one of those practices use "node <folder>/index.js"
