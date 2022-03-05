@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-md-4 mx-auto">
+
+        <div class="card">
+            <img class="card-img-top " src="Persona-5.jpg" alt="persona 5 package">
+            <div class="card-body">
+                <p>
+                    Lorem ipsum dolor sit amet.
+                </p>
+            </div>
+            <div class="card-footer">
+                <form action="/checkout" method="POST">
+                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        data-key="pk_test_51Ka37yEYF0cPTFO9RZxeywl0gqPqG9BOgvbw2h3MyXFI8ild0lJdVqcLE5VXt0IpQnL5zAqSjpTFxOKk7BSAKFYA00wk2kNt8A" 
+                        data-amount="50000"
+                        data-name="persona 5"
+                        data-description="baby"
+                        data-image="logo.jpg"
+                        data-locale="auto">
+                    </script>
+                    <script>
+                        document.getElementsByClassName('stripe-button-el')[0].style.display= 'none'
+                    </script>
+                    <button class="btn btn-dark btn-block">
+                        buy <i class="fa fa-shopping-cart"> </i>
+                    </button>
+        
+                </form>
+            </div>
+            
+        </div>
+    
+    
+    </div>
+</div>
