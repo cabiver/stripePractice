@@ -17,11 +17,8 @@ const storeItems = new Map([
   [2, { priceInCents: 20000, name: "Learn CSS Today" }],
 ])
 
-// app.get('/', (req,res)=>{
-//   console.log(path.join(__dirname, '../', 'client', 'index.html'))
-//   res.render(path.join(__dirname, '../', 'client', 'index.html'))
-// })
 app.post("/create-checkout-session", async (req, res) => {
+  console.log("open")
   try {
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
@@ -39,11 +36,12 @@ app.post("/create-checkout-session", async (req, res) => {
           quantity: item.quantity,
         }
       }),
-      success_url: `${process.env.CLIENT_URL}/success.html`,
-      cancel_url: `${process.env.CLIENT_URL}/cancel.html`,
+      success_url: `2/${process.env.CLIENT_URL}/success.html`,
+      cancel_url: `2/${process.env.CLIENT_URL}/cancel.html`,
     })
     res.json({ url: session.url })
   } catch (e) {
+    console.log(e.message)
     res.status(500).json({ error: e.message })
   }
 })
